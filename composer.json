@@ -1,0 +1,29 @@
+{
+  "name": "araditama/siam-ub-auth",
+  "description": "authentfikasi menggunakan akun SIAM UB",
+  "keywords": [
+    "auth",
+    "SIAM",
+    "scraper"
+  ],
+  "homepage": "https://github.com/araditama/siam-ub-auth",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "rizki aditama",
+          "email": "arizki.aditama@gmail.com",
+          "homepage": "https://araditama.com"
+      }
+  ],
+  "require": {
+      "fabpot/goutte": "^3.2"
+  },
+  "autoload": {
+      "psr-4": {
+          "Araditama\\AuthSIAM\\":"src/"
+      }
+  },
+
+  "minimum-stability": "dev"
+}
