@@ -8,15 +8,18 @@ class AuthSIAM
 {
     public function auth($credentials)
     {
-        $this->validate($credentials, [
-            'nim' => 'required',
-            'password' => 'required'
-        ]);
+        if(!isset($credentials['nim']) || !isset($credentials['password'])){
+            $response = [
+                'msg' => 'Invalid.'
+            ];
+            return response()->json($response, 400);
+        }
+
         $cl = new Client();
 
         $cr = $cl->request('GET', 'https://siam.ub.ac.id/');
         $form = $cr->selectButton('Masuk')->form();
-        $cr = $cl->submit($form, array('username' => $credentials->nim, 'password' => $credentials->password));
+        $cr = $cl->submit($form, array('username' => $credentials['nim'], 'password' => $credentials['password']));
 
         $cr = $cl->request('GET', 'https://siam.ub.ac.id/krs.php');
         $cek = $cr->filter('small.error-code')->each(function ($result) {
