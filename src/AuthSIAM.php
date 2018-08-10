@@ -21,7 +21,6 @@ class AuthSIAM
         $form = $cr->selectButton('Masuk')->form();
         $cr = $cl->submit($form, array('username' => $credentials['nim'], 'password' => $credentials['password']));
 
-        $cr = $cl->request('GET', 'https://siam.ub.ac.id/krs.php');
         $cek = $cr->filter('small.error-code')->each(function ($result) {
             return $result->text();
         });
@@ -36,7 +35,7 @@ class AuthSIAM
                 return $result->text();
             });
 
-            $token = str_random(30);
+            $token = str_random(32);
             $response = [
             'data' => [
                 'nim' => $data[0],
