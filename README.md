@@ -5,7 +5,7 @@ Untuk melihat informasi lebih lanjut tentang web scraper dan interface yang digu
 
 ## Installation
 
-Menambahkan araditama/siam-ub-auth sebagai dependency pada file composer.json :
+Menambahkan ``siam-ub-auth`` sebagai dependency pada file composer.json :
 
 ```
 composer require araditama/siam-ub-auth
@@ -14,14 +14,14 @@ composer require araditama/siam-ub-auth
 ## Usage
 
 Membuat instansiasi AuthSIAM :
-```
+```php
 use Araditama\AuthSIAM\AuthSIAM;
 
 $auth = new AuthSIAM;
 ```
 
 Melakukan request authentifikasi dengan menggunakan method ``auth()`` dengan masukkan parameter berupa array :
-```
+```php
 // contoh array dari credentials yang akan diproses
 $data = [
   'nim' => '15515020xxxxxx',
@@ -34,7 +34,7 @@ $result = $auth->auth($data);
 
 ## Result
 Jika NIM dan password benar :
-```
+```json
 {
 "data": {
   "nim": "15515020xxxx",
@@ -49,14 +49,14 @@ Jika NIM dan password benar :
 ```
 
 Jika NIM atau passowd salah :
-```
+```json
 {
   "msg": "NIM atau password salah"
 }
 ```
 
 Jika parameter input tidak valid :
-```
+```json
 {
   "msg": "Invalid."
 }
