@@ -119,9 +119,9 @@ class AuthSIAM
                         'fakultas' => substr($dataDiri[2], 19),
                         'jurusan' => substr($dataDiri[3], 7),
                         'prodi' => substr($dataDiri[4], 13),
-                        'jadwal' => $jadwal,
-                        'token' => $token
+                        'jadwal' => $jadwal
                     ],
+                    'token' => $token,
                     'msg' => 'success'
                 ];
             return response()->json($response, 200);
