@@ -32,16 +32,49 @@ $data = [
 $result = $auth->auth($data);
 ```
 
+Melakukan authentifikasi dengan result daftar jadwal kuliah juga dapat dilakukan dengan menggunakan method ``authWithSchedule()``.
+
 ## Result
-Jika NIM dan password benar :
+Jika NIM dan password benar menggunakan method ``auth()``:
 ```json
 {
-"data": {
-  "nim": "15515020xxxx",
-  "nama": "Lorem Ipsum",
-  "fakultas": "Ilmu Komputer",
-  "jurusan": "Teknik Informatika",
-  "prodi": "Teknik Informatika"
+  "data": {
+    "nim": "15515020xxxx",
+    "nama": "Lorem Ipsum",
+    "fakultas": "Ilmu Komputer",
+    "jurusan": "Teknik Informatika",
+    "prodi": "Teknik Informatika"
+  },
+  "msg": "success",
+  "token": "UpKefb2As1eIRJm7bGKhjlX6K84JZI"
+}
+```
+
+Jika NIM dan password benar menggunakan method ``authWithSchedule()``:
+```json
+{
+  "data": {
+    "nim": "15515020xxxx",
+    "nama": "Lorem Ipsum",
+    "fakultas": "Ilmu Komputer",
+    "jurusan": "Teknik Informatika",
+    "prodi": "Teknik Informatika",
+    "jadwal":[
+      {
+        "hari":"Sabtu",
+        "jam":"07:00 - 09:00",
+        "kode":"UBU4001",
+        "matkul":"Skripsi",
+        "ruang":"Gedung F FILKOM - F2.7"
+      },
+      {
+        "hari":"Sabtu",
+        "jam":"10:00 - 12:00",
+        "kode":"UBU4002",
+        "matkul":"Praktek Kerja Lapangan",
+        "ruang":"Gedung F FILKOM - F2.3"
+      }
+    ]
   },
   "msg": "success",
   "token": "UpKefb2As1eIRJm7bGKhjlX6K84JZI"
