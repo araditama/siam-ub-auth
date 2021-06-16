@@ -33,6 +33,7 @@ $result = $auth->auth($data);
 ```
 
 Melakukan authentifikasi dengan result daftar jadwal kuliah juga dapat dilakukan dengan menggunakan method ``authWithSchedule()``.
+Melakukan authentifikasi dengan result Kartu Hasil Studi juga dapat dilakukan dengan menggunakan method ``authWithGpa()``.
 
 ## Result
 Jika NIM dan password benar menggunakan method ``auth()``:
@@ -61,23 +62,67 @@ Jika NIM dan password benar menggunakan method ``authWithSchedule()``:
     "prodi": "Teknik Informatika",
     "jadwal":[
       {
-        "hari":"Sabtu",
-        "jam":"07:00 - 09:00",
-        "kode":"UBU4001",
-        "matkul":"Skripsi",
-        "ruang":"Gedung F FILKOM - F2.7"
+        "hari": "Senin",
+        "jam": "10:20 - 11:59",
+        "kelas": "B",
+        "kode": "CIT62004",
+        "matkul": "Pengantar Sistem Operasi",
+        "thn_kurikulum": "2020",
+        "dosen": "Wibisono Sukmo Wardhono, M.T.",
+        "ruang": "Gedung E PTIIK - E2.8",
       },
       {
-        "hari":"Sabtu",
-        "jam":"10:00 - 12:00",
-        "kode":"UBU4002",
-        "matkul":"Praktek Kerja Lapangan",
-        "ruang":"Gedung F FILKOM - F2.3"
+        "hari": "Senin",
+        "jam": "12:50 - 14:29",
+        "kelas": "B",
+        "kode": "CIT62002",
+        "matkul": "Pemrograman Lanjut",
+        "thn_kurikulum": "2020",
+        "dosen": "Bayu Rahayudi, ST., MT.",
+        "ruang": "Lab Pembelajaran Gedung G - G1.3",
       }
-    ]
+    ],
+    "token": "UpKefb2As1eIRJm7bGKhjlX6K84JZI"
   },
   "msg": "success",
-  "token": "UpKefb2As1eIRJm7bGKhjlX6K84JZI"
+}
+```
+
+Jika NIM dan password benar menggunakan method ``authWithGpa()``:
+```json
+{
+  "data": {
+    "nim": "15515020xxxx",
+    "nama": "Lorem Ipsum",
+    "fakultas": "Ilmu Komputer",
+    "jurusan": "Teknik Informatika",
+    "prodi": "Teknik Informatika",
+    "gpa":[
+      {
+        "no": "1",
+        "kode_matkul": "MPK60007",
+        "matkul": "Bahasa Indonesia ",
+        "sks": "2",
+        "nilai": "A",
+        "detail_nilai": [
+          {
+            "no": "1",
+            "tipe_nilai": "Absensi",
+            "nilai_ke": "1",
+            "nilai": "80",
+          },
+          {
+            "no": "2",
+            "tipe_nilai": "Quiz",
+            "nilai_ke": "2",
+            "nilai": "82",
+          }
+        ]
+      }
+    ],
+    "token": "UpKefb2As1eIRJm7bGKhjlX6K84JZI"
+  },
+  "msg": "success",
 }
 ```
 
