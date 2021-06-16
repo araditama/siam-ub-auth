@@ -143,7 +143,6 @@ class AuthSIAM
                 ],
                 'msg' => 'success'
             ];
-            // dd($response);
             return response()->json($response, 200);
         }
     }
@@ -187,7 +186,6 @@ class AuthSIAM
                 $result = str_replace("&nbsp;", "", $string);
                 $result = str_replace("  ", " ", $result);
                 $result = explode(" ", $result);
-                // dd($result);
                 $hari = $result[0];
                 $jam = $result[1] . " - " . $result[3];
                 $kelas = $result[4];
@@ -234,7 +232,6 @@ class AuthSIAM
                 ],
                 'msg' => 'success'
             ];
-            dd($response);
             return response()->json($response, 200);
         }
     }
